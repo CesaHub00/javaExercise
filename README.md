@@ -1,4 +1,4 @@
-Some JAVA exercise
+Some JAVA exercise  
 
 
 ## Getting Started
