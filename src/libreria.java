@@ -15,14 +15,12 @@ public class libreria{
         ArrayList<Libro> libreria = new ArrayList<Libro>();
 
         if(file.exists()){
-            String line;
             String[] campiLibro;
             try{
                 BufferedReader fileLibreria = new BufferedReader(new FileReader(file));
                 Scanner inFile = new Scanner(fileLibreria);
                 while(inFile.hasNextLine()){
-                    line = inFile.nextLine().trim();
-                    campiLibro = line.split(",");
+                    campiLibro = inFile.nextLine().trim().split(",");
                     libreria.add(new Libro(campiLibro[0], campiLibro[1], Integer.parseInt(campiLibro[2]), campiLibro[3].equals("in prestito")));
                 }
                 inFile.close();

@@ -8,12 +8,35 @@ public class es1 {
         System.out.print(toPrint);
     }
 
-    //private final String FOLDER = "testDirectory";
+    private static HashMap<Integer, elfo> map = new HashMap<Integer, elfo>();
+    private static Scanner scan = new Scanner(System.in);
 
+    private static String name, surname;
+    private static Integer age;
+
+    private static int i = 0;
     public static void main(String[] args){
 
-    }
+        while(scan.hasNextLine() && !(scan.nextLine().equals("stop"))){
+            i++;
+            printa("Name:");
+            name = scan.nextLine();
+            scan.nextLine();
 
+            printa("Surname:");
+            surname = scan.nextLine();
+            scan.nextLine();
+
+            printa("Age:");
+            age = scan.nextInt();
+            scan.nextLine();
+
+            map.put(i, new elfo(name, surname, age));
+        }
+
+        printa(map.toString());
+        scan.close();
+    }
 }
 
 abstract class essereVivente{
